@@ -21,4 +21,16 @@
       linear-gradient(to bottom, #ccc 2px, transparent 2px);
     background-size: 40px 40px;
   }
+
+  @media (hover: hover) and (pointer: fine) {
+    .hover-desktop-scale {
+      @apply hover:scale-105 hover:text-gray-500 transition duration-300;
+    }
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    .mobile-active-scale {
+      @apply active:scale-95 active:opacity-90 transition duration-100;
+    }
+  }
 }

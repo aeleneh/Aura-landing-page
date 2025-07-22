@@ -14,7 +14,7 @@
     <title>Aura</title>
   </head>
 
-  <body class="grid-pattern h-screen w-full relative overflow-hidden text-center">
+  <body class="grid-pattern h-screen w-full relative min-h-screen text-center">
     <!-- Full-page faded background -->
     <div class="absolute top-[160px] left-0 w-full h-[calc(100%-160px)] z-0 pointer-events-none">
       <div
@@ -71,7 +71,7 @@
       </header>
 
       <!-- Main Content -->
-          <main class="relative text-center mt-20 sm:mt-24 lg:mt-30 px-2 mx-auto">
+          <main class="relative text-center mt-20 sm:mt-24 lg:mt-30 px-2 mx-auto pb-20">
             <h2 class="text-4xl sm:text-6xl lg:text-8xl text-gray font-medium tracking-normal">
               <span class="whitespace-nowrap">Bring some <span class="font-libre font-extrabold text-black">aura</span></span><br>
               to your design
@@ -81,15 +81,16 @@
             </p>
               <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
                 <button
-                  class="py-3 px-8 w-60 max-w-60 sm:w-52 rounded-3xl bg-black text-white text-base font-medium border border-black transition-all duration-150 
-                  ease-in-out hover:bg-white hover:text-black hover:scale-105 hover:shadow-xl active:scale-100 active:shadow-md">
-                  Get full access
-                </button>
-                <button
-                  class="py-3 px-8 w-60 max-w-60 sm:w-52 rounded-3xl bg-white text-black border border-black text-base font-medium transition-all duration-150 
-                  ease-in-out hover:bg-black hover:text-white hover:scale-105 hover:shadow-xl active:scale-100 active:shadow-md">
-                  Learn More
-                </button>
+                class="py-3 px-8 w-full max-w-60 sm:w-52 rounded-3xl bg-black text-white text-base font-medium border border-black  
+                hover-desktop-scale mobile-active-scale">
+                Get full access
+              </button>
+              <button
+                class="py-3 px-8 w-full max-w-60 sm:w-52 rounded-3xl bg-white text-black border border-black text-base font-medium 
+                hover-desktop-scale mobile-active-scale">
+                Learn More
+              </button>
+              
               </div>
         </main>
     </div>
