@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="output.css" rel="stylesheet"/>
+    <title>Aura</title>
+  </head>
+
+  <body class="grid-pattern h-screen w-full relative overflow-hidden text-center">
+    <!-- Full-page faded background -->
+    <div class="absolute top-[160px] left-0 w-full h-[calc(100%-160px)] z-0 pointer-events-none">
+      <div
+        class="w-full h-full bg-white/60 backdrop-blur-2xl"
+        style="
+          mask-image: radial-gradient(ellipse at center, black 40%, transparent 100%);
+          -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 100%);
+        "
+      ></div>
+    </div>
+
+    <!-- Main Container (Centered Content) -->
+    <div class="max-w-4xl w-full flex flex-col mx-auto my-12 relative z-10 md:w-2xl text-center">
+      <!-- Header -->
+      <header class="flex flex-col sm:flex-row items-center justify-between rounded-full m-4 sm:m-6 py-4 px-6 
+      border-none sm:bg-white text-black sm:shadow-2xl">
+        <h1 class="font-libre text-3xl sm:text-4xl lg:text-5xl font-extrabold">aura</h1>
+        <!---Mobile Menu Button-->
+        <button class="sm:hidden absolute top-7 right-4 p-2" id="mobile-menu-btn">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+          <nav class="hidden sm:flex sm:flex-row items-center gap-4 lg:gap-6" id="nav-menu">
+            <a href="#home"
+            class="inline-block text-base font-medium transition-all duration-200 hover:text-gray hover:scale-105"
+            >Home</a>
+        </nav>
+        <nav class="hidden sm:flex sm:flex-row items-center gap-4 lg:gap-6" id="nav-menu">
+           <a href="#benefits"
+            class="inline-block text-base font-medium transition-all duration-200 hover:text-gray hover:scale-105"
+            >Benefits</a>
+        </nav>
+        <nav class="hidden sm:flex sm:flex-row items-center gap-4 lg:gap-6" id="nav-menu">
+          <a href="#tutorial"
+            class="inline-block text-base font-medium transition-all duration-200 hover:text-gray hover:scale-105"
+            >Tutorial</a>
+        </nav>
+        <nav class="hidden sm:flex sm:flex-row items-center gap-4 lg:gap-6" id="nav-menu">
+            <a href="#login"
+            class="inline-block py-3 px-8 rounded-3xl text-white bg-black text-base 
+            font-medium border border-black transition-all duration-200 hover:bg-white hover:text-black hover:scale-105" 
+            >Log In</a>
+        </nav>
+
+        <!-- Mobile Navigation (Hidden by default) -->
+        <nav class="sm:hidden w-full mt-4 hidden flex-col gap-2" id="mobile-nav">
+          <a href="#home" class="block py-2 text-sm font-medium hover:text-gray-600">Home</a>
+          <a href="#benefits" class="block py-2 text-sm font-medium hover:text-gray-600">Benefits</a>
+          <a href="#tutorial" class="block py-2 text-sm font-medium hover:text-gray-600">Tutorial</a>
+          <a href="#login" class="inline-block py-2 px-6 rounded-2xl text-white bg-black text-sm font-medium border border-black
+           hover:bg-white hover:text-black mt-2">Log In</a>
+        </nav>
+      </header>
+
+      <!-- Main Content -->
+          <main class="relative text-center mt-20 sm:mt-24 lg:mt-30 px-2 mx-auto">
+            <h2 class="text-4xl sm:text-6xl lg:text-8xl text-gray font-medium tracking-normal">
+              <span class="whitespace-nowrap">Bring some <span class="font-libre font-extrabold text-black">aura</span></span><br>
+              to your design
+            </h2>
+            <p class="text-black text-3xl font-extralight my-6 mx-6">
+              Try these simple tricks to make your boring <br> design look awesome
+            </p>
+              <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                <button
+                  class="py-3 px-8 w-60 max-w-60 sm:w-52 rounded-3xl bg-black text-white text-base font-medium border border-black transition-all duration-150 
+                  ease-in-out hover:bg-white hover:text-black hover:scale-105 hover:shadow-xl active:scale-100 active:shadow-md">
+                  Get full access
+                </button>
+                <button
+                  class="py-3 px-8 w-60 max-w-60 sm:w-52 rounded-3xl bg-white text-black border border-black text-base font-medium transition-all duration-150 
+                  ease-in-out hover:bg-black hover:text-white hover:scale-105 hover:shadow-xl active:scale-100 active:shadow-md">
+                  Learn More
+                </button>
+              </div>
+        </main>
+    </div>
+  </body>
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileNav.classList.toggle('hidden');
+    });
+  </script>
+</html>

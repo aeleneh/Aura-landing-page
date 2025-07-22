@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+    --color-gray: #595959;
+    --color-white: #fff;
+    --color-black: #1c1c1c;
+}
+
+@layer utilities {
+  .font-libre {
+    font-family: "Libre Caslon Text", serif;
+  }
+  
+  .font-roboto {
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .grid-pattern {
+    background-image: 
+      linear-gradient(to right, #ccc 2px, transparent 2px), 
+      linear-gradient(to bottom, #ccc 2px, transparent 2px);
+    background-size: 40px 40px;
+  }
+}
