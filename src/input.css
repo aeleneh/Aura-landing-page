@@ -1,36 +1,67 @@
 @import "tailwindcss";
 
 @theme {
-    --color-gray: #595959;
-    --color-white: #fff;
-    --color-black: #1c1c1c;
+  --color-gray: #707070;
+  --color-white: #fff;
+  --color-black: #1c1c1c;
 }
 
 @layer utilities {
   .font-libre {
     font-family: "Libre Caslon Text", serif;
   }
-  
+
   .font-roboto {
     font-family: "Roboto", sans-serif;
   }
-  
+
   .grid-pattern {
-    background-image: 
-      linear-gradient(to right, #ccc 2px, transparent 2px), 
+    background-image:
+      linear-gradient(to right, #ccc 2px, transparent 2px),
       linear-gradient(to bottom, #ccc 2px, transparent 2px);
     background-size: 40px 40px;
   }
 
-  @media (hover: hover) and (pointer: fine) {
-    .hover-desktop-scale {
-      @apply hover:scale-105 hover:text-gray-500 transition duration-300;
-    }
+  .icon-line {
+    @apply transition-all duration-300 ease-in-out;
   }
 
-  @media (hover: none) and (pointer: coarse) {
-    .mobile-active-scale {
-      @apply active:scale-95 active:opacity-90 transition duration-100;
-    }
+  .icon-top.open {
+    transform: rotate(45deg) translateY(6px);
+  }
+
+  .icon-middle.open {
+    opacity: 0;
+  }
+
+  .icon-bottom.open {
+    transform: rotate(-45deg) translateY(-6px);
+  }
+
+  .max-h-toggle {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+  }
+
+  .max-h-toggle.open {
+    max-height: 500px; 
+  }
+
+  /* Button hover effects */
+  .hover-desktop-scale {
+    @apply transition-all duration-200 ease-in-out;
+  }
+
+  .hover-desktop-scale:hover {
+    @apply scale-105;
+  }
+
+  .mobile-active-scale:active {
+    @apply scale-95;
+  }
+
+  .btn-hover {
+    @apply transition-all duration-200 ease-in-out hover:scale-105 active:scale-95;
   }
 }
