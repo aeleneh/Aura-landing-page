@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-gray: #595959;
+  --color-gray: #707070;
   --color-white: #fff;
   --color-black: #1c1c1c;
 }
@@ -46,33 +46,5 @@
 
   .max-h-toggle.open {
     max-height: 500px; 
-  }
-
-  .hover-desktop-scale {
-    @apply transition-all duration-200 ease-in-out;
-  }
-
-  @media (hover: hover) and (pointer: fine) {
-    .hover-desktop-scale:hover {
-      @apply scale-105;
-    }
-  }
-
-  .mobile-active-scale:active {
-    @apply scale-95;
-  }
-
-  .btn-interactive {
-    @apply transition-all duration-200 ease-in-out;
-  }
-
-  @media (hover: hover) and (pointer: fine) {
-    .btn-interactive:hover {
-      @apply scale-105;
-    }
-  }
-
-  .btn-interactive:active {
-    @apply scale-95;
   }
 }
