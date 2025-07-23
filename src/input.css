@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-gray: #707070;
+  --color-gray: #595959;
   --color-white: #fff;
   --color-black: #1c1c1c;
 }
@@ -37,7 +37,7 @@
   .icon-bottom.open {
     transform: rotate(-45deg) translateY(-6px);
   }
-
+  
   .max-h-toggle {
     max-height: 0;
     overflow: hidden;
@@ -48,20 +48,31 @@
     max-height: 500px; 
   }
 
-  /* Button hover effects */
   .hover-desktop-scale {
     @apply transition-all duration-200 ease-in-out;
   }
 
-  .hover-desktop-scale:hover {
-    @apply scale-105;
+  @media (hover: hover) and (pointer: fine) {
+    .hover-desktop-scale:hover {
+      @apply scale-105;
+    }
   }
 
   .mobile-active-scale:active {
     @apply scale-95;
   }
 
-  .btn-hover {
-    @apply transition-all duration-200 ease-in-out hover:scale-105 active:scale-95;
+  .btn-interactive {
+    @apply transition-all duration-200 ease-in-out;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .btn-interactive:hover {
+      @apply scale-105;
+    }
+  }
+
+  .btn-interactive:active {
+    @apply scale-95;
   }
 }
