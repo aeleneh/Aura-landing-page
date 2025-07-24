@@ -15,6 +15,8 @@
   </head>
 
   <body class="grid-pattern w-full relative min-h-screen text-center">
+     <!-- Blur overlay -->
+  <div id="blur-overlay" class="blur-overlay"></div>
     <!-- Full-page faded background -->
     <div class="absolute top-[160px] left-0 w-full h-[calc(100%-160px)] z-0 pointer-events-none">
       <div
@@ -84,7 +86,7 @@
               </header>
 
               <!-- Main Content -->
-    <main class="relative text-center mt-28 lg:mt-36 px-2 mx-auto pb-20 w-full max-w-3xl">
+      <main id="main-content" class="blur-main relative text-center mt-28 lg:mt-36 px-2 mx-auto pb-20 w-full max-w-3xl">
       <h2 class="text-5xl sm:text-7xl lg:text-8xl text-gray font-medium tracking-normal">
         <span class="whitespace-wrap">Bring some <span class="font-libre font-extrabold text-black">aura</span></span><br>
         to your design
@@ -111,6 +113,8 @@
     <script>
       const menuBtn = document.getElementById('mobile-menu-btn');
       const nav = document.getElementById('mobile-nav');
+      const blurOverlay = document.getElementById('blur-overlay');
+      const mainContent = document.getElementById('main-content'); 
     
       const topBar = menuBtn.querySelector('.icon-top');
       const midBar = menuBtn.querySelector('.icon-middle');
@@ -123,7 +127,22 @@
         topBar.classList.toggle('open');
         midBar.classList.toggle('open');
         botBar.classList.toggle('open');
+        
+        blurOverlay.classList.toggle('active');
+        mainContent.classList.toggle('active'); 
       });
-    </script>  
+    
+      blurOverlay.addEventListener('click', () => {
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        
+        topBar.classList.remove('open');
+        midBar.classList.remove('open');
+        botBar.classList.remove('open');
+        
+        blurOverlay.classList.remove('active');
+        mainContent.classList.remove('active'); 
+      });
+    </script>
   </body>
 </html>
